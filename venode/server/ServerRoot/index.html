@@ -1,0 +1,141 @@
+
+
+
+
+
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+			<title>VUI</title> 
+			<meta name="apple-mobile-web-app-capable" content="yes" >
+			<meta name="viewport" content="user-scalable=no, width=device-width">
+		</meta>
+		<script type="text/javascript" src="js/jquery.js"></script>
+       
+		<link rel="stylesheet"  href="/css/jquery.mobile-1.2.0.css" /> 
+	
+		<script src="/js/jquery.mobile-1.2.0.js"></script>
+		<script src="js/socket.io.js"></script>
+		<script type="text/javascript">
+        $(document).ready(function() {
+         $(".vUi").each(function(index) {
+		  $(this).attr('data-state', '0');
+		 
+		 });
+        
+       
+		
+		var socket = io.connect();
+		
+		socket.on('vvvv', function (msg) {
+		
+
+                
+			
+				
+   
+				if(msg.type=="update"){
+	
+					//{"type":"update","vtype":"slider","name":"slider1","value":"6","id":"broadcast"}
+		
+					if(msg.vtype=="slider"){
+					   
+					   var selected = $('input[data-vname*='+msg.name+']');
+					   selected.attr("data-state","1");
+					   selected.val(msg.value).slider("refresh");
+					   selected.attr("data-state","0");
+					  // console.log();
+					   
+						
+					}else if(msg.vtype=="text"){
+				        var selected = $('input[data-vname*='+msg.name+']');
+					    selected.attr("data-state","1");
+						selected.val(msg.value);
+                        selected.attr("data-state","0");
+					}else if(msg.vtype=="radio"){
+					
+					 $('input[data-vname*='+msg.name+']').each(function(index) {
+					        $(this).attr("data-state","1");
+                            $(this).attr("checked",false).checkboxradio("refresh");
+							$(this).attr("data-state","0");
+							});
+					 		$('input[value*='+msg.value+']').attr("checked",true).checkboxradio("refresh");
+							
+					}else if(msg.vtype=="switch"){
+					 var selected = $('input[data-vname*='+msg.name+']');
+						selected.attr("data-state","1");
+						selected.val(msg.value);
+					
+						selected.slider("refresh");
+						selected.attr("data-state","0");
+					
+					}		
+				}
+			
+   		});
+		
+		
+		$(".vUi").live( "change", function(event, ui) {
+		var state = this.dataset.state;
+		
+		if(state==0){
+		socket.send(this.dataset.vtype +':'+ this.dataset.vname +':'+ this.value);
+	 	}
+	    });
+		
+				
+		$(".button").live( "vclick", function(event, ui) {
+		socket.send(this.dataset.vtype +':'+ this.dataset.vname );
+	});
+
+  });
+		</script>
+	</head> 
+<body> 
+
+
+
+
+
+	
+
+<div data-role="content"  class="hnsite-command-no-cache">
+
+<fieldset>
+<ul data-role="listview" id="list" data-split-icon="gear" data-split-theme="d">
+<li  data-role="fieldcontain"><div data-role="colorpickerbutton"></div></li>
+
+<li  data-role="fieldcontain">    <label for="name">Text Input:</label>    <input class='vUi' data-vtype="text" data-vname="text1" type="text" name="name" id="myInput" value=""  /></li>
+
+<li  data-role="fieldcontain">
+<label for="flip-a">switch toggle</label>
+<select class='vUi' data-vtype="switch" data-vname="switch1" name="switch" id="flip-a" data-role="slider">
+	<option value="off">Off</option><option value="on">On</option> 
+	</select> </li>
+
+<li  data-role="fieldcontain">	
+<fieldset data-role="controlgroup" data-type="horizontal" data-vtype="radio-group" data-vname="test">
+	<legend>Radio Button:</legend>
+     	<input class="vUi" data-vtype="radio" data-vname="radio1" type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" /><label for="radio-choice-1">1</label>
+     	<input class="vUi" data-vtype="radio" data-vname="radio1" type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  /><label for="radio-choice-2">2</label>
+     	<input class="vUi" data-vtype="radio" data-vname="radio1" type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  /><label for="radio-choice-3">3</label>
+</fieldset>
+</li>
+
+<li  data-role="fieldcontain"><label for="testname">slider1 <br></label><input class='vUi' data-vtype="slider" data-vname="slider1"  type="range" name="slider1" id="vslidev" value="105" min="0" max="100" /></li>
+<li  data-role="fieldcontain"><label for="testname">slider2 <br></label><input class='vUi' data-vtype="slider" data-vname="slider2"  type="range" name="slider2" id="vslidev" value="105" min="0" max="100" /></li>
+<li  data-role="fieldcontain"><label for="testname">slider3 <br></label><input class='vUi' data-vtype="slider" data-vname="slider3"  type="range" name="slider3" id="vslidev" value="105" min="0" max="100" /></li>
+<li  data-role="fieldcontain"><label for="testname">slider4 <br></label><input class='vUi' data-vtype="slider" data-vname="slider4"  type="range" name="slider4" id="vslidev" value="105" min="0" max="100" /></li>
+<li  data-role="fieldcontain"><label for="testname">slider5 <br></label><input class='vUi' data-vtype="slider" data-vname="slider5"  type="range" name="slider5" id="vslidev" value="105" min="0" max="100" /></li>
+<li  data-role="fieldcontain"><button class='button' data-vtype="button" data-vname="submit" type="submit" data-theme="b"  value="submit-value">button</button></li>
+
+
+
+
+</ul></fieldset>
+</div><!-- /content -->
+
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta24.1.dtd" >
+   <PATCH nodename="C:\vvvv\PROJECTS\2010\node10\workshops\math\Vector Mathematics\Addition.v4p">
+   <BOUNDS height="10710" left="2700" top="0" type="Window" width="16455">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="270" left="690" top="795" type="Node" width="750">
+   </BOUNDS>
+   <BOUNDS height="270" left="690" top="795" type="Box" width="750">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="Addition">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="45" nodename="Renderer (EX9)">
+   <BOUNDS height="100" left="5220" top="525" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="8790" left="5220" top="525" type="Box" width="10395">
+   </BOUNDS>
+   <BOUNDS height="4860" left="11145" top="0" type="Window" width="6120">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Antialiasing Quality Level" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio Transform" visible="1">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="44" nodename="Camera (Transform Softimage)" path="C:\vvvv\vvvv_45beta24.1\modules\vvvv group\Transform\">
+   <BOUNDS height="100" left="14085" top="165" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="3600" left="14085" top="165" type="Box" width="4800">
+   </BOUNDS>
+   <BOUNDS height="6000" left="16320" top="1335" type="Window" width="9000">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="45" dstpinname="View Transform" srcnodeid="44" srcpinname="View">
+   </LINK>
+   <LINK dstnodeid="45" dstpinname="Projection Transform" srcnodeid="44" srcpinname="Projection">
+   </LINK>
+   <NODE componentmode="Hidden" id="43" nodename="AspectRatio (Transform)">
+   <BOUNDS height="100" left="13800" top="9915" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="0" left="13800" top="9915" type="Box" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="14415" top="9765" type="Window" width="0">
+   </BOUNDS>
+   <PIN pinname="Aspect Width" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Height" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="43" dstpinname="Aspect Width" srcnodeid="45" srcpinname="Actual Backbuffer Width">
+   </LINK>
+   <LINK dstnodeid="43" dstpinname="Aspect Height" srcnodeid="45" srcpinname="Actual Backbuffer Height">
+   </LINK>
+   <LINK dstnodeid="45" dstpinname="Aspect Ratio Transform" srcnodeid="43" srcpinname="Transform Out">
+   <LINKPOINT x="16535" y="9145">
+   </LINKPOINT>
+   <LINKPOINT x="16780" y="965">
+   </LINKPOINT>
+   </LINK>
+   <NODE componentmode="Hidden" id="42" nodename="Group (EX9)">
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS height="270" left="825" top="7290" type="Node" width="2445">
+   </BOUNDS>
+   <BOUNDS height="0" left="825" top="7290" type="Box" width="0">
+   </BOUNDS>
+   <BOUNDS height="0" left="11940" top="5145" type="Window" width="0">
+   </BOUNDS>
+   <PIN pinname="Layer Template Count" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" pintype="Input" slicecount="1" visible="-1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="45" dstpinname="Layers" srcnodeid="42" srcpinname="Layer">
+   <LINKPOINT x="855" y="8193">
+   </LINKPOINT>
+   <LINKPOINT x="450" y="7881">
+   </LINKPOINT>
+   <LINKPOINT x="450" y="507">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="41" nodename="Vector (DX9 Bounded).v4p" path="C:\vvvv\PROJECTS\2010\node10\workshops\math\Vector Mathematics\">
+   <BOUNDS height="100" left="825" top="6270" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Vector XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="37" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="540" top="2010" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="705" left="540" top="2010" type="Box" width="750">
+   </BOUNDS>
+   <BOUNDS height="160" left="4965" top="3270" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="1,0,0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Vector 1|">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="35" nodename="AxisAndGrid (DX9)" path="C:\vvvv\vvvv_45beta24.1\modules\vvvv group\EX9\">
+   <BOUNDS height="100" left="825" top="6795" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="3600" left="825" top="6795" type="Box" width="4800">
+   </BOUNDS>
+   <BOUNDS height="6000" left="4200" top="7305" type="Window" width="9000">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="47" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="1410" top="2010" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="720" left="1410" top="2010" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="4965" top="3270" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="1,0,0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Vector 2|">
+   </PIN>
+   </NODE>
+   <NODE id="48" nodename="Vector (DX9 Bounded).v4p" path="C:\vvvv\PROJECTS\2010\node10\workshops\math\Vector Mathematics\">
+   <BOUNDS height="100" left="1905" top="6270" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Vector XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Enable Helpers" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE id="49" nodename="Vector (DX9 Bounded).v4p" path="C:\vvvv\PROJECTS\2010\node10\workshops\math\Vector Mathematics\">
+   <BOUNDS height="100" left="2925" top="6270" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="Vector XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Enable Helpers" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|0.97258,0.30620,0.99815,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Layer" dstnodeid="42" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="41" dstpinname="Vector XYZ">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Layer" dstnodeid="42" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Layer" dstnodeid="42" dstpinname="Layer 4">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Vector XYZ">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Position XYZ">
+   </LINK>
+   <NODE nodename="Add (Value)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="2925" top="3765" width="300" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2925" top="3765" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Window" left="6420" top="5430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="50" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="50" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="50" srcpinname="Output" dstnodeid="49" dstpinname="Vector XYZ">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Layer" dstnodeid="42" dstpinname="Layer 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51">
+   <BOUNDS type="Node" left="3090" top="5370" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3090" top="5370" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Window" left="6945" top="5775" width="215" height="160">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="49" dstpinname="Enabled">
+   </LINK>
+   <NODE componentmode="InABox" id="53" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="3315" top="4350" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="720" left="3315" top="4350" type="Box" width="795">
+   </BOUNDS>
+   <BOUNDS height="160" left="4965" top="3270" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Result">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Output" dstnodeid="53" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>

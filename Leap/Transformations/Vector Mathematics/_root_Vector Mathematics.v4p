@@ -1,0 +1,79 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta29.dtd" >
+   <PATCH nodename="C:\vvvv\workshops\node13\transformations\Transformations\Vector Mathematics\_root_Vector Mathematics.v4p">
+   <BOUNDS height="5340" left="0" top="0" type="Window" width="2715">
+   </BOUNDS>
+   <NODE componentmode="InABox" id="0" nodename="IOBox (String)">
+   <BOUNDS height="270" left="15" top="15" type="Node" width="1350">
+   </BOUNDS>
+   <BOUNDS height="300" left="15" top="15" type="Box" width="1515">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Vector Mathematics|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="12" nodename="Addition.v4p">
+   <BOUNDS height="100" left="135" top="2160" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="135" top="2160" type="Box">
+   </BOUNDS>
+   <BOUNDS height="10710" left="2700" top="0" type="Window" width="16455">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="11" nodename="Angle phi between two vectors.v4p">
+   <BOUNDS height="100" left="135" top="3465" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="135" top="3465" type="Box">
+   </BOUNDS>
+   <BOUNDS height="8865" left="2700" top="0" type="Window" width="12645">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="9" nodename="Dot product.v4p">
+   <BOUNDS height="100" left="135" top="3030" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="135" top="3030" type="Box">
+   </BOUNDS>
+   <BOUNDS height="10860" left="2700" top="0" type="Window" width="16425">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="8" nodename="Cross product .v4p">
+   <BOUNDS height="100" left="120" top="3870" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="120" top="3870" type="Box">
+   </BOUNDS>
+   <BOUNDS height="11910" left="2805" top="0" type="Window" width="16335">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="InAWindow" id="15" nodename="Representation.v4p">
+   <BOUNDS height="100" left="195" top="795" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="10800" left="2700" top="0" type="Window" width="16455">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="13" nodename="Absolute value.v4p">
+   <BOUNDS height="100" left="150" top="1755" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="150" top="1755" type="Box">
+   </BOUNDS>
+   <BOUNDS height="11565" left="2715" top="0" type="Window" width="16170">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="10" nodename="Subtraction.v4p">
+   <BOUNDS height="100" left="150" top="2580" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="150" top="2580" type="Box">
+   </BOUNDS>
+   <BOUNDS height="10890" left="2700" top="0" type="Window" width="16440">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="VectorSpace.v4p" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="165" top="1260" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="165" top="1260" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2715" top="0" width="16395" height="10785">
+   </BOUNDS>
+   </NODE>
+   </PATCH>
